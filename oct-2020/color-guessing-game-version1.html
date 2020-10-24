@@ -25,29 +25,31 @@
       function runGame() {
         let guess = "";
         let correct = false;
+        let numTries = 0;
         const targetIndex = Math.floor(Math.random() * COLORS_ARRAY.length);
         const target = COLORS_ARRAY[targetIndex];
         console.log("The target is " + target);
         do {
           guess = prompt(
-            "I am thinking of a one of these colors\n\n" +
-              COLORS_ARRAY.join(", ") +
-              "\n\nWhat color am I thinking of? \n"
+            "Choose a color from the following: \n\n" + COLORS_ARRAY.join(", ")
           );
-          if (guess === target) {
-            alert("You won!");
-            return;
+          numTries += 1;
+          console.log(guess);
+          if (guess === null) {
+            alert("You are leaving the game");
+            correct = true;
+          } else if (guess < target) {
+            // from line 39 to line 46 you can extract the logic to a different function look at checkGuess in version 2
+            alert("Your guess is alphabetically lower than mine, try again");
+          } else if (guess > target) {
+            alert("Your guess is alphabetically higher than mine, try again");
+          } else {
+            alert("You won! It took you " + numTries + " tries.");
+            correct = true;
           }
         } while (correct === false);
+        document.body.style.background = guess;
       }
-      //   let num = Math.random();
-      //   console.log(num);
-      //   num = num * COLORS_ARRAY.length;
-      //   console.log(num);
-      //   num = Math.floor(num);
-      //   console.log(num);
-
-      function checkGuess(guess, target) {}
     </script>
   </body>
 </html>

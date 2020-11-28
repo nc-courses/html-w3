@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Color Guessing Game</h1>
+    <button type="button" onclick="runGame()">Start Game</button>
+    <script>
+      // steps to create a variable
+      // 1. choose the keyword (let, const, var)
+      // 2. decide on the name
+      // 3. put the assignment operator (=)
+      // 4. give it the value
+
+      const COLORS_ARRAY = [
+        "blue",
+        "cyan",
+        "gold",
+        "gray",
+        "green",
+        "magenta",
+        "orange",
+        "red",
+        "white",
+        "yellow",
+      ];
+
+      // steps to creating a function
+      // 1. use keyword function
+      // 2. choose the name for the function
+      // 3. ()
+      // 4. {}
+      // 5. optional: create parameters if needed between the paranthesis ()
+
+      function runGame() {
+        let guess = ""; // "" empty quotes is an empty string
+        let correct = false;
+        let numTries = 0;
+        const targetIndex = Math.floor(Math.random() * COLORS_ARRAY.length);
+        console.log(targetIndex);
+        const target = COLORS_ARRAY[targetIndex];
+        console.log(target); // it just prints to the console in the dev tools
+
+        do {
+          guess = prompt(
+            "I am thinking of one of these colors:\n\n" +
+              COLORS_ARRAY.join(", ") +
+              "\n\nWhat color am I thinking of?\n"
+          );
+          if (guess === null) {
+            // the user clicked Cancel
+            return;
+          }
+          correct = checkGuess(guess, target);
+          numTries += 1;
+        } while (correct === false); // !correct
+        document.body.style.background = guess; // change background color of the page
+        alert("You won! It took you " + numTries + " attempts.");
+      }
+
+      function checkGuess(guess, target) {
+        let correct = false;
+        if (COLORS_ARRAY.includes(guess) === false) {
+          alert(
+            "The color you chose does not exist in the list of colors. Choose from the following colors\n" +
+              COLORS_ARRAY
+          );
+        } else if (guess < target) {
+          // example: blue < white
+          alert(
+            "Wrong guess!\nHint: the color you chose is alphabetically lower than the target"
+          );
+        } else if (guess > target) {
+          // example: white > blue
+          alert(
+            "Wrong guess!\nHint: the color you chose is alphabetically higher than the target"
+          );
+        } else {
+          correct = true;
+        }
+        return correct;
+      }
+    </script>
+  </body>
+</html>

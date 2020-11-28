@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="sayHi()">Login</button>
+    <script>
+      // internal vs external JS
+
+      // onclick attribute
+      function sayHi() {
+        alert("Hello");
+      }
+
+      // let, const, var
+      // assignment operator (=)
+      //   camel case your variable names
+
+      //   let variables you can change the value later on
+      let firstNumber = 5;
+      firstNumber = 11;
+
+      //   var works almost identical to let except for scope
+
+      //   cannot change the value of constants
+      const PI = 3.141592;
+      //   PI = 11; this is wrong
+
+      // Number, String, Boolean - these are some data types
+      let num = 6;
+      let str = "this is a string";
+      let str1 = "this is a string two";
+      let str2 = `this is a string three`; // backticks this is next to the number 1 on your keyboard
+      let bool = false;
+
+      // null vs undefined
+      let email = null; // email has no value, think about contact example on your phone, not all fields are filled in so the ones that are not filled in are null
+
+      let num1; // when you declare a variable and don't give it a value it will have a value of undefined
+
+      // variable declaration vs initialization
+      let nameOfVariable; // this is declaration
+      nameOfVariable = 500; // this is initialization
+      let nameOfVar = 400; // declaration and initialization in one line
+
+      // functions
+      //   DRY - Don't Repeat Yourself
+
+      // syntax
+      function giveItAName() {
+        // here your line code are written
+      }
+
+      // here I declare my function
+      function sendText(contact, message) {
+        // has some code to log you in
+        console.log(contact, message);
+      }
+
+      // calling the function (i.e. I want the function to run the code)
+      //   sendText("Cassie", "How are you?");
+      //   sendText("Ken", "How are you?");
+      //   sendText("Chris", "How are you?");
+      //   sendText("Jasper", "How are you?");
+
+      // parameters and arguments
+      //   to create a parameter go to where you define/create/declared the function in between the paranthesis
+      //   you assign the value to a parameter by using an argument, you can pass an argument (i.e. a value) to a parameter where you call the function
+
+      // scope
+      //   scope is the area where the variable is available for you to use
+
+      // console.log
+      //   for errors and for debugging
+
+      //   let light = "Red";
+      //   // if, else, else if
+      //   if (light === "Red") {
+      //     //   stop
+      //     console.log("Stop");
+      //   } else if (light === "Yellow") {
+      //     // slow down, if your in Miami speed up
+      //     console.log(`Slow down`);
+      //   } else {
+      //     // go
+      //     console.log(`Go`);
+      //   }
+
+      // ===, ==, !==, !=
+      // === check if the value on the left has the same data type and the same value as the value on the right
+      //   console.log("1" === "1"); // this is true
+      //   console.log("1" === 1); // this is false
+
+      // == checks if the value is the same but it does not care about the data type
+      //   console.log("1" == 1); // this is true
+      //   console.log("1" == "1"); // this is true
+
+      // !== this check if left value is NOT equal to right value
+      //   console.log(1 !== 2); // this is true
+
+      // >, >=, <, <=
+
+      // > greater than
+      //   console.log(2 <= 2);
+
+      // true and false values
+
+      // &&, ||, !
+      let person = "Cassie";
+      let age = 18;
+      let isVIP = true;
+      //   console.log(age >= 21 && isVIP === true);
+      if (age >= 18 || isVIP === true) {
+        // take them to the rooftop and give them a bottle
+      }
+
+      // false, null, undefined, empty string, 0, NaN only 6 false values in JS
+
+      // switch
+      if (age <= 5) {
+        // free
+      } else if (age > 5 && age < 12) {
+        // $100/day
+      } else if (age > 12 && age < 18) {
+        // $120/day
+      } else if (age >= 18 && age < 55) {
+        // $90/day
+      }
+
+      //   switch (light) {
+      //     case "Red": // $100
+      //     case "Yellow": // $90
+      //     case "Green": // $120
+      //   }
+
+      // +=, -=, ++, --
+      let num2 = 11;
+      console.log(num2);
+      num2 = num2 + 5;
+      console.log(num2);
+      num2 += 5;
+      console.log(num2);
+      num2 -= 10;
+      console.log(num2);
+      num2++; // num2 = num2 + 1
+      console.log(num2);
+      num2++; // num2 += 1
+      console.log(num2);
+      num2--;
+      console.log(num2);
+
+      // while, do while
+      let score = 10;
+      while (score < 10) {
+        console.log(`condition is true, score is = ${score}`);
+        score++;
+      }
+
+      do {
+        // we do something at least once
+        console.log(`condition is true, score is = ${score}`);
+        score++;
+      } while (score < 100);
+
+      // arrays, length, indices
+      let contacts = ["Ken", "Cassie", "Danielle", "Chris"];
+      console.log(contacts[1]);
+      console.log(contacts.length);
+
+      // array methods: push, pop, unshift, shift, join, includes, indexOf
+      console.log(contacts);
+      contacts.unshift("Jasper");
+      console.log(contacts);
+      contacts.shift();
+      console.log(contacts);
+      console.log(contacts.includes("Juan")); // check if the the value you pass exists in the array
+      console.log(contacts.indexOf("Juan")); // will return the index where the element is located
+
+      console.log(contacts.join("----"));
+
+      //   let arrayStr =
+      //     contacts[0] +
+      //     "----" +
+      //     contacts[1] +
+      //     "----" +
+      //     contacts[2] +
+      //     "----" +
+      //     contacts[3];
+
+      let arrayStr = contacts.join("----");
+      console.log(arrayStr);
+
+      //   function pop() {
+      //     // remove item from the end of the array
+      //   }
+
+      //   function push(itemValue){
+      //     // add item to the end of array
+      //   }
+
+      // Math.random, Math.floor
+      let random = Math.random(); // 0.000-0.999999
+      console.log(random);
+      random *= contacts.length; // 0*5 - 0.999999 * 5 ==> 0 - highestIndexOfArray.99999999999
+      random = Math.floor(random); // 0-highestIndexOfArray
+      console.log(random);
+
+      let randomIndex = Math.floor(Math.random() * contacts.length);
+    </script>
+  </body>
+</html>

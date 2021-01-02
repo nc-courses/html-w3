@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Guessing Game</title>
+  </head>
+  <body>
+    <h1>Color Guessing Game</h1>
+    <button onclick="runGame()">Start Game</button>
+    <script>
+      const COLORS_ARRAY = [
+        "blue",
+        "cyan",
+        "gold",
+        "gray",
+        "green",
+        "magenta",
+        "orange",
+        "red",
+        "white",
+        "yellow",
+      ];
+
+      function runGame() {
+        let guess = "";
+        let correct = false;
+        const targetIndex = Math.floor(Math.random() * COLORS_ARRAY.length);
+        const target = COLORS_ARRAY[targetIndex];
+        console.log(target);
+
+        do {
+          guess = prompt("Guess a color");
+          console.log("the user guesses " + guess);
+          if (guess === target) {
+            correct = true;
+            alert("You won!");
+          }
+        } while (correct === false);
+      }
+
+      function checkGuess(guess, target) {}
+    </script>
+  </body>
+</html>

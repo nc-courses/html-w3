@@ -57,8 +57,13 @@
           correct = checkGuess(guess, target);
           numTries += 1;
         } while (correct === false); // !correct
-        document.body.style.background = guess; // change background color of the page
-        alert("You won! It took you " + numTries + " attempts.");
+
+        if (correct === true) {
+          document.body.style.background = guess; // change background color of the page
+          alert("You won! It took you " + numTries + " attempts.");
+        } else {
+          alert("Thanks for playing, keep it real baby seal ;)");
+        }
       }
 
       function checkGuess(guess, target) {

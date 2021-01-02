@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: lightcyan;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- script tag, similar to style tag -->
+    <!-- internal vs external JS -->
+    <!-- always put script tag right before the CLOSING body tag -->
+    <button onclick="hi()">Click me</button>
+    <audio src=""></audio>
+    <script src=""></script>
+    <script>
+      // onclick attribute
+      function hi() {
+        alert("Hello class!");
+      }
+
+      // variables
+      // syntax
+      // 1. choose the keyword (let, const, var)
+      // 2. create a variable name using camelCase
+      // 3. use the assignment operator (i.e. =)
+      // 4. give it a value
+
+      let name = "Dana Smith";
+      console.log(name);
+
+      // variable initialization vs declaration
+      let var1; // declaration
+      var1 = "Kurtis"; // initialization
+
+      // let vs const
+      // let you can reassign a value  to a variable
+      // how to change the value  of a variable
+      // 1. type variable name
+      // 2. use the assignment operator (i.e. =)
+      // 3. type the new value
+      name = "Dana Smith-Lopez";
+      console.log(name);
+
+      // const
+      // once you assign a value to a constant it will not allow you to change it
+      const pi = 3.141592;
+
+      // assignment operator
+      // anytime you want to assign a value to a variable use the equal sign
+
+      // Data types
+      // string is text that is wrapped in quotes ("", '', ``)
+      let str = "This is some random text";
+
+      // number just type the number no quotes or special symbols  needed
+      let num = 11;
+
+      // boolean has only two values (true or false)
+      let truthy = true;
+      let falsy = false;
+
+      let adminEmployee = false;
+
+      // camelCase  means the first  word of a variable is lowercase and every word after the first word will have  the  first letter capitalized
+
+      // undefined
+      let undef;
+      console.log(undef);
+
+      // null
+      let noValue = null;
+
+      // functions
+      // 1. type the keyword  function
+      // 2. give the  function a name, use camelCase
+      // 3. ***** add parenthesis *****
+      // 4. add curly braces
+      // 5. inside of the curly braces add your lines of code
+
+      // function declaration
+      function helloUser() {
+        console.log("Hello User");
+      }
+
+      // calling a function
+      // 1. type the function name
+      // 2. ***** add parenthesis *****
+      helloUser();
+
+      // parameters
+      // 1. go to where you declared your function
+      // 2. inside of the parenthesis create 1 or more parameters (when you create a parameter you choose what name it should have)
+      function hiUser(firstName, lastName) {
+        console.log("Hi " + firstName + " " + lastName);
+      }
+      // string concatenation
+      // adding two string together using the plus symbol
+
+      // you give the value to a parameter inside of the parenthesis of where you call the function, this is called the argument
+      // argument is the value you give to the parameter of a function
+      hiUser("Tom", "Witherspoon");
+      hiUser("Kurtis", "Lopez");
+      hiUser("Cherima", "James");
+
+      // global variable
+      let user = "Juan";
+
+      // block scope vs global scope
+      function hey() {
+        // block scope variable
+        let user2 = "Felipe";
+
+        console.log("inside the function " + user);
+      }
+
+      hey();
+      console.log("outside the function " + user);
+
+      // var - any variable created with this will have a global scope, don't use it
+
+      // JS console
+
+      let age = 17;
+      let withParent = false;
+      // if, else, else if
+      // if
+      // if + else
+      // if + else if
+      // if + else if (you can multiple else if's) + else
+      if (age >= 17) {
+        console.log("You can watch the rated R movie");
+      } else if (withParent === true) {
+        console.log("You can watch the rated R movie with your parent");
+      } else {
+        console.log("You cannot watch the movie");
+      }
+
+      // checking for equality
+      // === strict equality, has to match the value and data type
+      if (2 === 2) {
+        console.log("true number 2 is equal to number 2");
+      }
+
+      if (2 === "2") {
+        console.log("false, number 2 is not equal to string 2");
+      }
+
+      // == loose equality, has to match value and not data type
+      if (2 == "2") {
+        console.log(
+          "true, the value of number 2 is equal to the value string 2"
+        );
+      }
+
+      // !==, !=, >, >=, <, <=
+      if (2 !== "2") {
+        console.log("false, number 2 is not equal to string 2");
+      }
+
+      if (2 === "2") {
+        console.log("this statement is true");
+      } else {
+        console.log("number 2 is not equal to string 2");
+      }
+
+      if ("") {
+        console.log("this is true");
+      } else {
+        console.log("this is a false value");
+      }
+
+      // truthy vs falsy
+
+      // falsy  values: false, null, undefined, empty string, 0, NaN
+
+      let floridian = false;
+      // && AND
+      if (age >= 17 && floridian === true) {
+        console.log("Disney discount");
+      }
+
+      // || OR
+      if (age >= 17 || floridian === true) {
+        console.log("Disney discount");
+      }
+
+      // !
+
+      age = 18;
+      // switch
+      switch (age) {
+        case 18:
+          console.log("you are 18 years old");
+          break;
+        case 22:
+          console.log("you are 22 years old");
+          break;
+        case 32:
+          console.log("you are 32 years old");
+          break;
+        default:
+          console.log("You are no an infant");
+      }
+
+      if (age === 18) {
+        console.log("you are 18 years old");
+      } else if (age === 22) {
+        console.log("you are 22 years old");
+      } else if (age === 32) {
+        console.log("you a`re 32 years old");
+      } else {
+        console.log("You are no an infant");
+      }
+
+      // +=, -=, ++, --
+      let score = 0;
+      let won = false;
+      let lost = true;
+      // if(won === true){
+      //   score = score + 100
+      //   score += 3
+      //   score++
+      // }
+
+      // if(lost === true){
+      //   score = score - 100
+      //   score -= 3
+      //   score--
+      // }
+
+      won = true;
+      // while loop
+      while (won === false) {
+        score -= 1;
+        console.log(score);
+        if (score === -5) {
+          won = true;
+        }
+      }
+
+      // do while
+      do {
+        score -= 1;
+        console.log(score);
+        if (score === -5) {
+          won = true;
+        }
+      } while (won === false);
+
+      // arrays
+      let arrNum = [1, 2, 3, 4, 5, 6];
+      let arrStr = ["Juan", "Tom", "Cherima"];
+      let arr = [1, "Juan", "Tom", 5];
+
+      // push, pop, unshift, shift, join, includes, indexOf
+      console.log(arr);
+      arr.push("Kurtis");
+      console.log(arr);
+      arr.pop();
+      console.log(arr);
+
+      function includes(elementYourSearchingFor) {
+        // JS code
+      }
+
+      function pop() {
+        // JS code
+      }
+
+      if (arr.includes("Tom")) {
+        console.log("you have tom in your contacts");
+      }
+
+      // Math.random - returns a random decimal from 0-0.99999..
+      console.log(Math.random());
+
+      // Math.floor
+      console.log(Math.floor(3.99999));
+      console.log(Math.ceil(3.00001));
+    </script>
+  </body>
+</html>
